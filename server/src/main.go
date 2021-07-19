@@ -58,7 +58,7 @@ func ParseFile(w http.ResponseWriter, r *http.Request) {
 			} else {
 				comment = ""
 			}
-			sqlStatement := `INSERT INTO known_qa (questions, answers, comments) VALUES ($1, $2, $3)`
+			sqlStatement := `INSERT INTO known_qa (question, answer, comment) VALUES ($1, $2, $3)`
 			_, err := dbutils.DB.Exec(sqlStatement, question, answer, comment)
 			if err != nil {
 				fmt.Println("Error inserting")

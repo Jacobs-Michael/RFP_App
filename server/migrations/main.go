@@ -12,7 +12,7 @@ func main() {
 		id SERIAL,
 		question VARCHAR UNIQUE,
 		answer VARCHAR,
-		comments VARCHAR
+		comment VARCHAR
 		);`
 	_, err := dbutils.DB.Exec(sqlStatement)
 	if err != nil {
